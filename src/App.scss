@@ -1,0 +1,234 @@
+
+.video {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+// html {
+//     background: url(https://mocah.org/thumbs/585964-rick-and-morty.jpg) no-repeat center center fixed;
+//     -webkit-background-size: cover;
+//     -moz-background-size: cover;
+//     -o-background-size: cover;
+//     background-size: cover;
+// }
+
+
+.navigation {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    border-bottom: 1px solid gold;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    justify-content: flex-end;
+    font-size: 30px;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+.link--active {
+    color: deeppink;
+}
+
+.loader {
+    border: 10px solid #f3f3f3;
+    border-top: 10px solid #3498db;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.char--main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+
+.char--main-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 1300px;
+
+}
+
+.mapped--box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-height: 350px;
+    border: 5px solid black;
+    margin: 10px;
+    max-width: 300px;
+    width: 100%;
+}
+
+.picture {
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 250px;
+    background-size: cover;
+    background-position: center center;
+}
+
+.text--box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    flex-direction: column;
+    background: rgba(2, 66, 18, 0.3);
+    width: 100%;
+    padding: 5px;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.span--box {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.button {
+    display: flex;
+    padding: 2px 2px;
+    justify-self: center;
+    border-radius: 5px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    border: 3px solid rgb(255, 6, 6);
+    background-color: transparent;
+    border-right: 0px;
+    border-top: 0px;
+    color: white;
+    &:hover {
+        cursor: pointer;
+    }
+    &:disabled {
+        color: red;
+        &:hover {
+            cursor: default;
+        }
+    }
+
+}
+
+.singe--char--box {
+    display: flex;
+    min-width: 350px;
+    justify-content: center;
+    align-items: center;
+}
+
+.button--box {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.red {
+    background-color: rgba(255, 0, 0, 0.3);
+}
+
+.green {
+    background-color: rgba(0, 255, 85, 0.3);
+}
+
+.episode--super--main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.episode--main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 1000px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.episode--box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+    background: rgba(2, 66, 18, 0.3);
+    width: 100%;
+    padding: 5px;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    width: 300px;
+    
+    min-height: 170px;
+    border: 3px solid black;
+}
+
+.input--box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    gap: 30px;
+}
+
+.input {
+    width: 400px;
+    height: 45px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid gold;
+    color: white;
+
+}
+
+.h1 {
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+}
+.char--butt-box {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+.page404 {
+    display: flex;
+    justify-content: center;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+}

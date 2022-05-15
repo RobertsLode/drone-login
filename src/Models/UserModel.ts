@@ -1,3 +1,10 @@
+export type Info = {
+    count: number,
+    page: number,
+    next: string,
+    prev: null
+}
+
 export type Results = {
     id: number,
     name: string,

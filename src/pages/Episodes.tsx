@@ -85,7 +85,7 @@ const EpisodesPage = () => {
               </div>
               <button
                 className="button"
-                onClick={() => navigate(`/episodes/${name}`)}
+                onClick={() => navigate(`/episodes/${id}`)}
               >
                 Details
               </button>

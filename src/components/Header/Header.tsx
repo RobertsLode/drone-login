@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import styles from './Header.module.scss';
 
 const getActiveLinkClassName = (isActive: boolean) => (isActive ? 'link link--active' : 'link');
 

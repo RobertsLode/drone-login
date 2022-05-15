@@ -26,7 +26,7 @@ const App = () => (
     <Header />
     <Routes>
       <Route path="/episodes" element={<EpisodesPage />} />
-      <Route path="/episodes/:name" element={<EpisodesFilterPage />} />
+      <Route path="/episodes/:id" element={<EpisodesFilterPage />} />
       <Route path="/characters" element={<CharactersPage />} />
       <Route path="/characters/:id" element={<CharacterPage />} />
       <Route path="/locations" element={<Locations />} />

@@ -51,3 +51,15 @@ export type Characters = {
     image : string,
 
 }
+
+export type singleUser = {
+    userName: string,
+    password: string,
+    email: string
+};
+
+export type Users = {
+    userName: string,
+    password: string,
+    email: string
+}[];

@@ -14,7 +14,7 @@ const UsersPage = () => {
 
   const navigate = useNavigate();
 
-  const getUsers = async () => {
+  const getCharacters = async () => {
     try {
       const response = await axios.get(`https://rickandmortyapi.com/api/character/?${searchParams}`);
       setUsers(response.data.results);
@@ -58,7 +58,7 @@ const UsersPage = () => {
   };
 
   useEffect(() => {
-    getUsers();
+    getCharacters();
   }, [searchParams]);
 
   return (

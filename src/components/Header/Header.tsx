@@ -1,9 +1,13 @@
 import { NavLink } from 'react-router-dom';
-import styles from './Header.module.scss';
+import './Header.module.scss';
+
+type HeaderProps = {
+  onClick: () => void;
+};
 
 const getActiveLinkClassName = (isActive: boolean) => (isActive ? 'link link--active' : 'link');
 
-const Header = () => (
+const Header = ({ onClick }: HeaderProps) => (
   <div>
     <nav className="navigation">
       <NavLink
@@ -24,6 +28,12 @@ const Header = () => (
       >
         Locations
       </NavLink>
+      <button
+        className="logout-button link"
+        onClick={onClick}
+      >
+        Log out
+      </button>
     </nav>
   </div>
 );

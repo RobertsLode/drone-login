@@ -43,13 +43,17 @@ const App = () => {
     if (users.find((user) => user.userName === loginUsername
     && user.password === loiginPassword)) {
       setLoggedIn(true);
+      setLoginPassword('');
+      setLoginUsername('');
+    } else {
+      alert('Invalid username or password');
     }
-    setLoginPassword('');
-    setLoginUsername('');
   };
 
   return (
-    <div>
+    <div
+      className="main"
+    >
       <Router>
         <video
           className="video"
@@ -86,8 +90,14 @@ const App = () => {
               handleLogin={handleLogin}
             />
           ) : (
-            <div>
-              <Header />
+            <div
+              className="max-width"
+            >
+              <Header
+                onClick={() => {
+                  setLoggedIn(false);
+                }}
+              />
               <Routes>
                 <Route path="/episodes" element={<EpisodesPage />} />
                 <Route path="/episodes/:id" element={<EpisodesFilterPage />} />

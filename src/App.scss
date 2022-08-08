@@ -1,4 +1,3 @@
-
 .video {
     object-fit: cover;
     width: 100vw;
@@ -7,7 +6,8 @@
     top: 0;
     left: 0;
     z-index: -1;
-  }
+}
+
 // html {
 //     background: url(https://mocah.org/thumbs/585964-rick-and-morty.jpg) no-repeat center center fixed;
 //     -webkit-background-size: cover;
@@ -16,6 +16,9 @@
 //     background-size: cover;
 // }
 
+.max-width {
+    width: 100%;
+}
 
 .navigation {
     display: flex;
@@ -129,11 +132,14 @@
     border-right: 0px;
     border-top: 0px;
     color: white;
+
     &:hover {
         cursor: pointer;
     }
+
     &:disabled {
         color: red;
+
         &:hover {
             cursor: default;
         }
@@ -194,7 +200,7 @@
     color: white;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     width: 300px;
-    
+
     min-height: 170px;
     border: 3px solid black;
 }
@@ -222,11 +228,13 @@
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 
 }
+
 .char--butt-box {
     display: flex;
     flex-direction: row;
     gap: 15px;
 }
+
 .page404 {
     display: flex;
     justify-content: center;
@@ -240,4 +248,12 @@
     justify-content: center;
     align-items: center;
     margin-top: 70px;
+    width: 100%;
+}
+
+.logout-button {
+    border: none;
+    background-color: transparent;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
 }

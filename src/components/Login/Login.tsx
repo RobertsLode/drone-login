@@ -59,58 +59,10 @@ const Login = ({
       {loginOrSignin === 'Login'
         ? (
           <div>
-            <p className="text">Please log in!</p>
-            <div className="mb-3">
-              <label
-                htmlFor="exampleFormControlInput1"
-                className="form-label"
-              >
-                User name
-              </label>
-              <input
-                required
-                value={loginUsername}
-                onChange={(e) => {
-                  handleLoginUsername(e.target.value);
-                }}
-                type="text"
-                className="form-control"
-                id="exampleFormControlInput1"
-                placeholder="name@example.com"
-              />
-            </div>
-            <div className="mb-3">
-              <label
-                htmlFor="exampleFormControlInput1"
-                className="form-label"
-              >
-                Password
-              </label>
-              <input
-                required
-                value={loiginPassword}
-                onChange={(e) => {
-                  handleLoginPassword(e.target.value);
-                }}
-                type="email"
-                className="form-control"
-                id="exampleFormControlInput1"
-                placeholder="Example password"
-              />
-            </div>
-            <button
-              className="form--button"
-              onClick={handleLogin}
-            >
-              Log in
-            </button>
-          </div>
-        )
-        : (
-      // ________________________________ sign up ________________________________
-          <div>
-            <p className="text">Please sign up!</p>
-            <div>
+            {' '}
+            <form action="">
+
+              <p className="text">Please log in!</p>
               <div className="mb-3">
                 <label
                   htmlFor="exampleFormControlInput1"
@@ -120,30 +72,11 @@ const Login = ({
                 </label>
                 <input
                   required
-                  value={newUsername}
+                  value={loginUsername}
                   onChange={(e) => {
-                    onUsernameChange(e.target.value);
+                    handleLoginUsername(e.target.value);
                   }}
                   type="text"
-                  className="form-control"
-                  id="exampleFormControlInput1"
-                  placeholder="name@example.com"
-                />
-              </div>
-              <div className="mb-3">
-                <label
-                  htmlFor="exampleFormControlInput1"
-                  className="form-label"
-                >
-                  Email
-                </label>
-                <input
-                  required
-                  value={newEmail}
-                  onChange={(e) => {
-                    onEmailChange(e.target.value);
-                  }}
-                  type="email"
                   className="form-control"
                   id="exampleFormControlInput1"
                   placeholder="name@example.com"
@@ -158,9 +91,9 @@ const Login = ({
                 </label>
                 <input
                   required
-                  value={newPassword}
+                  value={loiginPassword}
                   onChange={(e) => {
-                    onPasswordChange(e.target.value);
+                    handleLoginPassword(e.target.value);
                   }}
                   type="email"
                   className="form-control"
@@ -168,23 +101,93 @@ const Login = ({
                   placeholder="Example password"
                 />
               </div>
+              <button
+                className="form--button"
+                onClick={handleLogin}
+              >
+                Log in
+              </button>
+            </form>
+          </div>
+        )
+        : (
+      // ________________________________ sign up ________________________________
+          <div>
+            <p className="text">Please sign up!</p>
+            <div>
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  handeleNewUser();
+                  setLoginOrSignin('Login');
+                }}
+              >
+                <div className="mb-3">
+                  <label
+                    htmlFor="exampleFormControlInput1"
+                    className="form-label"
+                  >
+                    User name
+                  </label>
+                  <input
+                    required
+                    value={newUsername}
+                    onChange={(e) => {
+                      onUsernameChange(e.target.value);
+                    }}
+                    type="text"
+                    className="form-control"
+                    id="exampleFormControlInput1"
+                    placeholder="hotPotat69"
+                  />
+                </div>
+                <div className="mb-3">
+                  <label
+                    htmlFor="exampleFormControlInput1"
+                    className="form-label"
+                  >
+                    Email
+                  </label>
+                  <input
+                    required
+                    value={newEmail}
+                    onChange={(e) => {
+                      onEmailChange(e.target.value);
+                    }}
+                    type="email"
+                    className="form-control"
+                    id="exampleFormControlInput1"
+                    placeholder="name@example.com"
+                  />
+                </div>
+                <div className="mb-3">
+                  <label
+                    htmlFor="exampleFormControlInput1"
+                    className="form-label"
+                  >
+                    Password
+                  </label>
+                  <input
+                    required
+                    value={newPassword}
+                    onChange={(e) => {
+                      onPasswordChange(e.target.value);
+                    }}
+                    type="password"
+                    className="form-control"
+                    id="exampleFormControlInput1"
+                    placeholder="Example password"
+                  />
+                </div>
+                <button
+                  className="form--button"
+                >
+                  Sign up!
+                </button>
+              </form>
             </div>
-            <button
-              className="form--button"
-              onClick={() => {
-                handeleNewUser();
-                setLoginOrSignin('Login');
-              }}
-
-            >
-              Sign up!
-            </button>
           </div>
         )}
-
-      {(newEmail || newPassword || newUsername) && (
-        <p>Complete all fields!</p>
-      )}
     </div>
   );
 };

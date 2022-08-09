@@ -95,7 +95,7 @@ const Login = ({
                   onChange={(e) => {
                     handleLoginPassword(e.target.value);
                   }}
-                  type="email"
+                  type="password"
                   className="form-control"
                   id="exampleFormControlInput1"
                   placeholder="Example password"

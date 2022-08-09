@@ -4,6 +4,11 @@ const Users = [
     password: 'admin',
     email: 'admin',
   },
+  {
+    userName: 'asd',
+    password: 'asd',
+    email: 'asd',
+  },
 ];
 
 export default Users;

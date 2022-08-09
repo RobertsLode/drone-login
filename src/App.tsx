@@ -25,6 +25,7 @@ const App = () => {
   const [loginUsername, setLoginUsername] = useState<string>('');
   const [loiginPassword, setLoginPassword] = useState<string>('');
   const [loggedIn, setLoggedIn] = useState<boolean>(false);
+  const [userStatus, setUserStatus] = useState<string>('');
 
   const handeleNewUser = () => {
     if (newUsername && newEmail && newPassword) {
@@ -40,14 +41,23 @@ const App = () => {
   };
 
   const handleLogin = () => {
-    if (users.find((user) => user.userName === loginUsername
-    && user.password === loiginPassword)) {
+    if ((users.find((user) => user.userName === loginUsername
+    && user.password === loiginPassword))
+    && (loginUsername !== 'admin'
+    && loiginPassword !== 'admin')) {
+      console.log('not admin');
+      setUserStatus('regularUser');
       setLoggedIn(true);
-      setLoginPassword('');
-      setLoginUsername('');
+      // navigate(`/characters/${Math.floor(Math.random() * 800).toString()}`);
+    } else if (users.find((user) => user.userName === loginUsername
+    && user.password === loiginPassword)) {
+      setUserStatus('admin');
+      setLoggedIn(true);
     } else {
       alert('Invalid username or password');
     }
+    setLoginPassword('');
+    setLoginUsername('');
   };
 
   return (
@@ -94,20 +104,31 @@ const App = () => {
               className="max-width"
             >
               <Header
+                userStatus={userStatus}
                 onClick={() => {
                   setLoggedIn(false);
                 }}
               />
-              <Routes>
-                <Route path="/episodes" element={<EpisodesPage />} />
-                <Route path="/episodes/:id" element={<EpisodesFilterPage />} />
-                <Route path="/characters" element={<CharactersPage />} />
-                <Route path="/characters/:id" element={<CharacterPage />} />
-                <Route path="/locations" element={<Locations />} />
-                <Route path="/" element={<Navigate to="/characters" />} />
-                <Route path="/404" element={<Page404 />} />
-                <Route path="*" element={<Navigate to="/404" />} />
-              </Routes>
+              <div>
+                {userStatus === 'regularUser' ? (
+                  <Routes>
+                    <Route path="/characters" element={<CharactersPage />} />
+                    <Route path="/characters/:id" element={<CharacterPage />} />
+                  </Routes>
+                ) : (
+                  <Routes>
+                    <Route path="/characters" element={<CharactersPage />} />
+                    <Route path="/characters/:id" element={<CharacterPage />} />
+                    <Route path="/episodes" element={<EpisodesPage />} />
+                    <Route path="/episodes/:id" element={<EpisodesFilterPage />} />
+                    <Route path="/locations" element={<Locations />} />
+                    <Route path="/" element={<Navigate to="/characters" />} />
+                    <Route path="/404" element={<Page404 />} />
+                    <Route path="*" element={<Navigate to="/404" />} />
+                  </Routes>
+
+                ) }
+              </div>
             </div>
           )}
         </div>

@@ -48,12 +48,12 @@ const App = () => {
       console.log('not admin');
       setUserStatus('regularUser');
       setLoggedIn(true);
-      // navigate(`/characters/${Math.floor(Math.random() * 800).toString()}`);
     } else if (users.find((user) => user.userName === loginUsername
     && user.password === loiginPassword)) {
       setUserStatus('admin');
       setLoggedIn(true);
     } else {
+      // eslint-disable-next-line no-alert
       alert('Invalid username or password');
     }
     setLoginPassword('');

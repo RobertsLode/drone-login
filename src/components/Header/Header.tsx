@@ -33,7 +33,6 @@ const Header = ({ userStatus, onClick }: HeaderProps) => (
           </NavLink>
         </div>
       )}
-
       <button
         className="logout-button link"
         onClick={onClick}
